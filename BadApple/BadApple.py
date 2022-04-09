@@ -6,9 +6,12 @@ import mvf
 import audio
 from time import sleep_ms
 import gc
+from os import listdir #os.path.isfile doesn't exist in micropython
 
 thumby.display.setFPS(30) #only needed for menu transition
 exit = False
+playaudio = thumby.audio.enabled
+if not "badapple.zdp" in listdir("/Games/BadApple"): playaudio = False
 
 def callback():
     audio.fillbufs()
@@ -28,9 +31,10 @@ transition(0)
 while not exit:
     vf = open("/Games/BadApple/badapple.mvf", "rb")
     mvf.load(vf)
-    af = open("/Games/BadApple/badapple.zdp", "rb")
-    audio.load(af)
-    if thumby.audio.enabled: audio.play() #respect the audio setting
+    if playaudio:
+        af = open("/Games/BadApple/badapple.zdp", "rb")
+        audio.load(af)
+        audio.play()
     mvf.play(callback=callback)
     
     while audio.playing: #allow audio to finish - the audio is slightly longer than the video
