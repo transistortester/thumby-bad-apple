@@ -14,6 +14,6 @@ Audio can be disabled from the thumby's settings menu.
 If you want to save storage space on your thumby, you can remove the audio entirely by deleting the file `badapple.zdp`.
 
 ### Emulation
-Audio will not work in the emulator. To disable it, either do not include the file `badapple.zdp` within the emulation, or remove the line `audio.play()` within `BadApple.py` (line 37).
+Audio will not work in the emulator. Audio will be disabled automatically if emulation is detected.
 
-If the video plays too slowly, it may be possible to speed it up by adding `usegc=False` to line 38 of `BadApple.py` (so it looks like `mvf.play(callback=callback, usegc=False)`). This will likely cause decompression errors if audio is enabled, so use with caution.
+If the video plays too slowly, it may be possible to speed it up by adding `usegc=False` to line 45 of `BadApple.py` (so it looks like `mvf.play(callback=callback, usegc=False)`). This will likely cause decompression errors if audio is enabled, so use with caution.
