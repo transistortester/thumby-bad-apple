@@ -13,6 +13,13 @@ exit = False
 playaudio = thumby.audio.enabled
 if not "badapple.zdp" in listdir("/Games/BadApple"): playaudio = False
 
+try:
+    import emulator
+    print("Emulator detected - audio disabled")
+    playaudio = False
+except ImportError:
+    pass
+
 def callback():
     audio.fillbufs()
     if thumby.buttonA.justPressed(): mvf.printmem()
