@@ -6,7 +6,9 @@ This contains the source code and supporting files to play the [Bad Apple!!](htt
 ## Playback
 
 ### Real hardware
-Create the folder `/Games/BadApple/` and copy the five files into it. The video can then be selected from the games menu.
+This has been added to the [Thumby Arcade](https://arcade.thumby.us), so it can be added to your thumby with a single click.
+
+Alternatively, you can manually install it by creating the folder `/Games/BadApple/` and copying the five files into it. The video can then be selected from the games menu.
 
 At any point during playback, pressing B will stop the video and pressing A will print memory usage (only visible if connected to a computer).
 Audio can be disabled from the thumby's settings menu.
